@@ -1,4 +1,4 @@
-# RoquiSigner
+# RoQuiSigner
 Is a signer application of the XML files using XAdES-BES algorithm
 
 ## Thanks
@@ -40,10 +40,10 @@ gradle build
 ## Publish in local maven repository
 ### GNU/Linux or MacOS
 ```
-mvn install:install-file -Dfile=./app/build/libs/RoquiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoquiSigner -Dversion=1.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile=./app/build/libs/RoQuiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoQuiSigner -Dversion=1.0.0 -Dpackaging=jar
 ```
 ### Windows
 In CMD terminal, not in PowerShell
 ```
-mvn install:install-file -Dfile=.\app\build\libs\RoquiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoquiSigner -Dversion=1.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile=.\app\build\libs\RoQuiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoQuiSigner -Dversion=1.0.0 -Dpackaging=jar
 ```

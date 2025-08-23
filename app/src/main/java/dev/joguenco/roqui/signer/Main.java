@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws RuntimeException {
         Logger logger = LoggerFactory.getLogger(Main.class);
-        logger.info("Roqui Signer");
+        logger.info("RoQui Signer");
 
         System.out.println(new Main().SignXmlFile());
     }

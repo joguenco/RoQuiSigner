@@ -49,6 +49,6 @@ tasks.named<Test>("test") {
 
 tasks.jar {
     // Customize the JAR file name
-    archiveFileName.set("RoquiSigner-$version.jar")
+    archiveFileName.set("RoQuiSigner-$version.jar")
 }
 
