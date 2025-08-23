@@ -10,7 +10,7 @@ credit notes, remission guides and purchase liquidation for Ecuador country
 
 ## Software
 * Java 21
-* Gradle 8.13
+* Gradle 8.14.3
 
 ## Warning
 Before of continuing, please read the documentation, read the all documents in doc folder
@@ -18,7 +18,7 @@ Before of continuing, please read the documentation, read the all documents in d
 ## Gradle
 ### Upgrade Gradle
 ```
-gradle wrapper --gradle-version 8.13
+gradle wrapper --gradle-version 8.14.3
 ```
 
 ### Displays the tasks runnable from root project
@@ -38,7 +38,12 @@ gradle test
 gradle build
 ```
 ## Publish in local maven repository
+### GNU/Linux or MacOS
 ```
 mvn install:install-file -Dfile=./app/build/libs/RoquiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoquiSigner -Dversion=1.0.0 -Dpackaging=jar
 ```
-
+### Windows
+In CMD terminal, not in PowerShell
+```
+mvn install:install-file -Dfile=.\app\build\libs\RoquiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoquiSigner -Dversion=1.0.0 -Dpackaging=jar
+```

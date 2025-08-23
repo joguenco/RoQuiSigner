@@ -20,10 +20,11 @@ public class Main {
         ClassLoader classLoader = Main.class.getClassLoader();
 
         var pathDigitalCertificate = classLoader.getResource("Hacker.p12").getPath();
+        var fileCertificate = new File(pathDigitalCertificate);
         var password = "No_Piratear";
+
         var pathXmlFile = classLoader
                 .getResource("0301202301123456789000110010030000000071234567811.xml").getPath();
-
         var fileXml = new File(pathXmlFile);
 
         var signer = new Signer();
@@ -32,9 +33,9 @@ public class Main {
             var pathOutPutFile = fileXml.getParent() + File.separator +
                     getNameFileWithOutExtension(fileXml.getName()) +"-signed" + ".xml";
 
-            signer.sign(pathDigitalCertificate,
+            signer.sign(fileCertificate.getPath(),
                     password,
-                    pathXmlFile,
+                    fileXml.getPath(),
                     pathOutPutFile);
 
             return "Document signed saved in " + pathOutPutFile;
