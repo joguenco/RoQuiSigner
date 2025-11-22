@@ -8,8 +8,10 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    id("maven-publish")
 }
 version = "1.0.0"
+group = "dev.joguenco.signer"
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -22,8 +24,8 @@ dependencies {
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    implementation("org.slf4j:slf4j-api:2.0.16")
-    implementation("org.slf4j:slf4j-jdk14:2.0.16")
+    // implementation("org.slf4j:slf4j-api:2.0.16")
+    // implementation("org.slf4j:slf4j-jdk14:2.0.16")
     implementation("com.googlecode.xades4j:xades4j:1.7.0")
 
     compileOnly("org.projectlombok:lombok:1.18.34")
@@ -52,3 +54,18 @@ tasks.jar {
     archiveFileName.set("RoQuiSigner-$version.jar")
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            artifactId = "RoQuiSigner"
+            from(components["java"])
+            pom {
+                name.set("RoQuiSigner")
+                description.set("XML Digital Signature Application")
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
