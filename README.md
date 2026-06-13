@@ -10,7 +10,7 @@ credit notes, remission guides and purchase liquidation for Ecuador country
 
 ## Software
 * Java 21
-* Gradle 8.14.4
+* Gradle 8.14.5
 
 ## Warning
 Before of continuing, please read the documentation, read the all documents in doc folder
@@ -18,7 +18,7 @@ Before of continuing, please read the documentation, read the all documents in d
 ## Gradle
 ### Upgrade Gradle
 ```
-gradle wrapper --gradle-version 8.14.4
+gradle wrapper --gradle-version 8.14.5
 ```
 
 ### Displays the tasks runnable from root project
