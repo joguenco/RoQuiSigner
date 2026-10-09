@@ -42,6 +42,10 @@ or you can run separately
 ```
 gradle build
 ```
+build without test
+```
+gradle build -x test
+```
 ## Publish in local maven repository
 ### GNU/Linux or MacOS
 ```
