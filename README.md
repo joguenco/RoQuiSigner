@@ -49,10 +49,10 @@ gradle build -x test
 ## Publish in local maven repository
 ### GNU/Linux or MacOS
 ```
-mvn install:install-file -Dfile=./app/build/libs/RoQuiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoQuiSigner -Dversion=1.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile=./app/build/libs/RoQuiSigner-2.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoQuiSigner -Dversion=2.0.0 -Dpackaging=jar
 ```
 ### Windows
 In CMD terminal, not in PowerShell
 ```
-mvn install:install-file -Dfile=.\app\build\libs\RoQuiSigner-1.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoQuiSigner -Dversion=1.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile=.\app\build\libs\RoQuiSigner-2.0.0.jar -DgroupId=dev.joguenco.signer -DartifactId=RoQuiSigner -Dversion=2.0.0 -Dpackaging=jar
 ```

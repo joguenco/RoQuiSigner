@@ -1,17 +1,13 @@
 package dev.joguenco.roqui.signer.xml;
 
-
-import org.apache.xml.security.keys.keyresolver.KeyResolverException;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
-import xades4j.XAdES4jException;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.KeyStoreException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class SignerXml {
 
@@ -26,11 +22,7 @@ public class SignerXml {
         resourcesForSign.setPassword(password);
         resourcesForSign.setIdToSign("id");
 
-        try {
-            return signerXAdESXml.sign(resourcesForSign);
-        } catch (KeyStoreException | XAdES4jException | KeyResolverException e) {
-            throw new RuntimeException(e);
-        }
+        return signerXAdESXml.sign(resourcesForSign);
     }
 
     Document parseXmlDocument(InputStream inputStream) {

@@ -14,35 +14,27 @@ public class Main {
     public String SignXmlFile() {
         ClassLoader classLoader = Main.class.getClassLoader();
 
-        var pathDigitalCertificate = classLoader
-            .getResource("Hacker.p12")
-            .getPath();
+        var pathDigitalCertificate = classLoader.getResource("Hacker.p12").getPath();
         var fileCertificate = new File(pathDigitalCertificate);
         var password = "No_Piratear";
 
-        var pathXmlFile = classLoader
-            .getResource(
-                "0301202301123456789000110010030000000071234567811.xml"
-            )
-            .getPath();
+        var pathXmlFile =
+                classLoader
+                        .getResource("0301202301123456789000110010030000000071234567811.xml")
+                        .getPath();
         var fileXml = new File(pathXmlFile);
 
         var signer = new Signer();
 
         try {
             var pathOutPutFile =
-                fileXml.getParent() +
-                File.separator +
-                getNameFileWithOutExtension(fileXml.getName()) +
-                "-signed" +
-                ".xml";
+                    fileXml.getParent()
+                            + File.separator
+                            + getNameFileWithOutExtension(fileXml.getName())
+                            + "-signed"
+                            + ".xml";
 
-            signer.sign(
-                fileCertificate.getPath(),
-                password,
-                fileXml.getPath(),
-                pathOutPutFile
-            );
+            signer.sign(fileCertificate.getPath(), password, fileXml.getPath(), pathOutPutFile);
 
             return "Document signed saved in " + pathOutPutFile;
         } catch (IOException e) {

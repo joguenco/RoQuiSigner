@@ -1,6 +1,5 @@
 package dev.joguenco.roqui.signer.xml;
 
-
 import org.w3c.dom.Document;
 
 public class ResourcesForSign {

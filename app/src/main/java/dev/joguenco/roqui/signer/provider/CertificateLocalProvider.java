@@ -1,29 +1,25 @@
 package dev.joguenco.roqui.signer.provider;
 
 import dev.joguenco.roqui.signer.exception.InvalidCertificateException;
-import lombok.extern.slf4j.Slf4j;
-import xades4j.providers.impl.KeyStoreKeyingDataProvider;
-
 import java.security.cert.X509Certificate;
 import java.util.List;
 
-@Slf4j
-public class CertificateLocalProvider implements KeyStoreKeyingDataProvider.SigningCertSelector {
+public class CertificateLocalProvider {
+
+    private static final int DIGITAL_SIGNATURE_KEY_USAGE = 0;
 
     /**
-     * This method is used for return the local certificate provider,
-     * this method no validate the local provider
+     * This method is used for return the local certificate provider, this method no validate the
+     * local provider
      */
     public X509Certificate selectCertificate(List<X509Certificate> availableCertificates) {
         if (availableCertificates != null)
             for (X509Certificate x509Certificate : availableCertificates) {
                 var keyUsage = x509Certificate.getKeyUsage();
                 if (keyUsage == null) {
-                    log.warn("No es un certificado emitido por una entidad certificadora oficial");
                     return x509Certificate;
                 }
-                if (x509Certificate.getKeyUsage()[0])
-                    return x509Certificate;
+                if (keyUsage[DIGITAL_SIGNATURE_KEY_USAGE]) return x509Certificate;
             }
         throw new InvalidCertificateException("No existe un proveedor local del certificado");
     }

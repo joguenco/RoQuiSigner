@@ -1,23 +1,25 @@
 package dev.joguenco.roqui.signer;
 
 import dev.joguenco.roqui.signer.xml.SignerXml;
-import org.w3c.dom.Document;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import org.w3c.dom.Document;
 
 public class Signer {
 
-    public void sign(String pathDigitalCertificate,
-              String password,
-              String pathXmlFile,
-              String pathOutPutXmlFileSigned) throws IOException {
+    public void sign(
+            String pathDigitalCertificate,
+            String password,
+            String pathXmlFile,
+            String pathOutPutXmlFileSigned)
+            throws IOException {
 
         var signerXml = new SignerXml();
 

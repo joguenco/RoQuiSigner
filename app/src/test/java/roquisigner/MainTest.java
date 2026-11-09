@@ -3,12 +3,14 @@
  */
 package roquisigner;
 
-import dev.joguenco.roqui.signer.Main;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import dev.joguenco.roqui.signer.Main;
+import org.junit.jupiter.api.Test;
+
 class MainTest {
-    @Test public void appSignXmlFile() {
+    @Test
+    public void appSignXmlFile() {
         Main classUnderTest = new Main();
         assertTrue(classUnderTest.SignXmlFile().contains("Document signed"));
     }
